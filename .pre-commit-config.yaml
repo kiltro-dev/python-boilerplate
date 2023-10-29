@@ -1,0 +1,14 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pipenv run pylint
+        language: system
+        types: [python]
+        args: [
+            "-rn", # Only display messages
+            "-sn", # Don't display the score
+            "--rcfile=.pylintrc", # Link to your coding file
+            "--load-plugins=pylint.extensions.docparams", # Load and extension
+          ]
